@@ -13,6 +13,7 @@ class Filestore:
             self.dir = self.temp_dir.name
 
     def _get_filename_from_key(self, key):
+        # format to filesystem specific key if needed
         return os.path.join(self.dir, key)
 
     def post(self, key, byte_value):

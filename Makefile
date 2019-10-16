@@ -17,3 +17,16 @@ ssh:
 .ONESHELL:
 stop:
 	docker container stop  $$(docker container ls -q --filter name=test_storages)
+
+
+.PHONY: test-unit
+.ONESHELL:
+test-unit:
+	@ pytest tests -vv -x
+
+.PHONY: coverage
+.ONESHELL:
+coverage:
+		coverage run -m tests
+		coverage report -m
+		coverage html
