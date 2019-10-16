@@ -19,9 +19,9 @@ stop:
 	docker container stop  $$(docker container ls -q --filter name=test_storages)
 
 
-.PHONY: test-unit
+.PHONY: test
 .ONESHELL:
-test-unit:
+test:
 	@ pytest tests -vv -x
 
 .PHONY: coverage
